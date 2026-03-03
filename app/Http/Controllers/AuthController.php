@@ -31,4 +31,35 @@ class AuthController extends Controller
         return redirect()->route('home');
        
     }
+
+    // login
+    public function login(Request $request){
+        // validate
+
+           $fields = $request ->validate([
+           
+            'email' =>['required','max:255','email' ],
+            'password' =>['required'],
+        ]);
+
+        // dd($request);
+
+        // try to login the user
+       if( Auth::attempt($fields, $request->remember)){
+            return redirect()->intended('dashboard');
+       }else{
+            return back()->withErrors([
+                'failed'=>'Wrong password or email'
+            ]);
+       }
+    }
+
+    public function logout(Request $request){
+       Auth::logout();
+       $request->session()->invalidate();
+       $request->session()->regenerateToken();
+       return redirect('/');
+
+
+    }
 }
