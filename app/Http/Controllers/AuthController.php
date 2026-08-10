@@ -9,9 +9,7 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
-    /**
-     * REGISTER USER
-     */
+   
     public function register(Request $request)
     {
         // Validation
@@ -21,7 +19,7 @@ class AuthController extends Controller
             'password' => ['required', 'min:3', 'confirmed'],
         ]);
 
-        // Create user (IMPORTANT: hash password + default role)
+       
         $user = User::create([
             'username' => $fields['username'],
             'email' => $fields['email'],
@@ -32,32 +30,29 @@ class AuthController extends Controller
         // Login user
         Auth::login($user);
 
-        // Redirect
-        return redirect()->route('dashboard');
+        return redirect('/products');
     }
 
-    /**
-     * LOGIN USER
-     */
+   
     public function login(Request $request)
     {
-        // Validate
+      
         $fields = $request->validate([
             'email' => ['required', 'max:255', 'email'],
             'password' => ['required'],
         ]);
 
-        // Attempt login
+     
         if (Auth::attempt($fields, $request->remember)) {
 
             $request->session()->regenerate();
 
-            // ROLE BASED REDIRECT (IMPORTANT FIX)
+          
             if (auth()->user()->role === 'admin') {
                 return redirect('/admin/dashboard');
             }
 
-            return redirect()->intended('dashboard');
+            return redirect()->intended('/products');
         }
 
         return back()->withErrors([
@@ -65,9 +60,6 @@ class AuthController extends Controller
         ]);
     }
 
-    /**
-     * LOGOUT USER
-     */
     public function logout(Request $request)
     {
         Auth::logout();

@@ -12,27 +12,21 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    /**
-     * Mass assignable fields
-     */
+   
     protected $fillable = [
         'username',
         'email',
         'password',
-        'role', // 👈 IMPORTANT (admin/user system)
+        'role', 
     ];
 
-    /**
-     * Hidden fields
-     */
+   
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * Attribute casting
-     */
+   
     protected function casts(): array
     {
         return [
@@ -41,19 +35,19 @@ class User extends Authenticatable
         ];
     }
 
-    /**
-     * Relationship: User has many posts
-     */
+   
     public function posts(): HasMany
     {
         return $this->hasMany(Post::class);
     }
-
-    /**
-     * Helper: Check if user is admin
-     */
+    public function orders()
+{
+    return $this->hasMany(Order::class, 'customer_id');
+}
     public function isAdmin(): bool
     {
         return $this->role === 'admin';
     }
 }
+
+?>

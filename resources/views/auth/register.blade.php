@@ -2,10 +2,9 @@
 
 <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-950 dark:to-slate-900 px-4">
 
-    {{-- Animated Card --}}
     <div class="w-full max-w-md animate-fade-in">
 
-        {{-- Header --}}
+       
         <div class="text-center mb-6">
             <h1 class="text-3xl font-bold text-slate-800 dark:text-white">Create account</h1>
             <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
@@ -13,13 +12,13 @@
             </p>
         </div>
 
-        {{-- Card --}}
+      
         <div class="card dark:bg-slate-900 dark:border-slate-800">
 
             <form action="{{ route('register') }}" method="post" class="space-y-5">
                 @csrf
 
-                {{-- Username --}}
+                
                 <div class="relative">
                     <span class="input-icon">👤</span>
 
@@ -35,7 +34,7 @@
                     @enderror
                 </div>
 
-                {{-- Email --}}
+              
                 <div class="relative">
                     <span class="input-icon">📧</span>
 
@@ -51,7 +50,7 @@
                     @enderror
                 </div>
 
-                {{-- Password --}}
+              
                 <div class="relative">
                     <span class="input-icon">🔒</span>
 
@@ -61,7 +60,7 @@
 
                     <label class="floating-label">Password</label>
 
-                    {{-- Toggle --}}
+                   
                     <button type="button" onclick="togglePassword('password', this)"
                         class="absolute right-3 top-3 text-slate-500 hover:text-slate-700 dark:hover:text-white">
                         👁
@@ -72,7 +71,7 @@
                     @enderror
                 </div>
 
-                {{-- Confirm Password --}}
+             
                 <div class="relative">
                     <span class="input-icon">🔒</span>
 
@@ -82,14 +81,13 @@
 
                     <label class="floating-label">Confirm Password</label>
 
-                    {{-- Toggle --}}
                     <button type="button" onclick="togglePassword('password_confirmation', this)"
                         class="absolute right-3 top-3 text-slate-500 hover:text-slate-700 dark:hover:text-white">
                         👁
                     </button>
                 </div>
 
-                {{-- Submit --}}
+               
                 <button class="btn w-full">
                     Create account
                 </button>
@@ -98,7 +96,7 @@
 
         </div>
 
-        {{-- Footer --}}
+     
         <p class="text-center text-sm text-slate-500 dark:text-slate-400 mt-4">
             Already have an account?
             <a href="{{ route('login') }}" class="text-blue-600 hover:underline">
@@ -109,7 +107,7 @@
     </div>
 </div>
 
-{{-- JS --}}
+
 <script>
 function togglePassword(id, btn) {
     const input = document.getElementById(id);

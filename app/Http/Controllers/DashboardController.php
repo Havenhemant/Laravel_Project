@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    //
-    public function index(){
-        $posts = Auth::user()->posts()->latest()->paginate(6);
-        return view('users.dashboard',['posts' =>$posts]);
+    public function index()
+    {
+        $orders = Auth::user()->orders()->with('items.product')->latest()->paginate(6);
+        return view('users.dashboard', ['orders' => $orders]);
     }
 }

@@ -19,7 +19,7 @@ class PostTest extends TestCase
 
     public function test_authenticated_user_can_create_post()
     {
-        // manual user create (no factory)
+     
         $user = User::create([
             'username' => 'testuser',
             'email' => 'test@test.com',
@@ -28,7 +28,7 @@ class PostTest extends TestCase
 
         $response = $this->actingAs($user)->post('/posts', [
             'title' => 'Test Post',
-            'body' => 'This is test content' // ✅ body (not content)
+            'body' => 'This is test content' 
         ]);
 
         $this->assertDatabaseHas('posts', [
@@ -40,7 +40,7 @@ class PostTest extends TestCase
     {
         $response = $this->post('/posts', [
             'title' => 'Test',
-            'body' => 'Test content' // ✅ body
+            'body' => 'Test content' 
         ]);
 
         $response->assertRedirect('/login');

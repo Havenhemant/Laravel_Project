@@ -1,11 +1,11 @@
 <x-layout>
 
-<!-- Center wrapper -->
+
 <div class="min-h-screen flex items-center justify-center px-4">
 
     <div class="w-full max-w-md">
 
-        <!-- Header -->
+       
         <div class="text-center mb-6">
             <h1 class="text-3xl font-bold text-white">Welcome back </h1>
             <p class="text-slate-400 text-sm mt-1">
@@ -13,10 +13,10 @@
             </p>
         </div>
 
-        <!-- Card -->
+       
         <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
 
-            <!-- Error -->
+           
             @error('failed')
                 <div class="mb-4 bg-red-500/10 text-red-400 border border-red-500/20 px-4 py-2 rounded-lg text-sm">
                     {{ $message }}
@@ -26,7 +26,7 @@
             <form action="{{ route('login') }}" method="post" class="space-y-4">
                 @csrf
 
-                <!-- Email -->
+             
                 <div>
                     <label class="text-sm text-slate-400">Email</label>
                     <input type="email" name="email"
@@ -38,7 +38,7 @@
                     @enderror
                 </div>
 
-                <!-- Password -->
+                
                 <div>
                     <label class="text-sm text-slate-400">Password</label>
                     <input type="password" name="password"
@@ -49,7 +49,7 @@
                     @enderror
                 </div>
 
-                <!-- Remember -->
+               
                 <div class="flex items-center gap-2">
                     <input type="checkbox" name="remember" id="remember"
                            class="w-4 h-4 accent-blue-600">
@@ -59,7 +59,7 @@
                     </label>
                 </div>
 
-                <!-- Button -->
+               
                 <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition">
                     Login
                 </button>
@@ -68,7 +68,7 @@
 
         </div>
 
-        <!-- Footer -->
+       
         <p class="text-center text-sm text-slate-500 mt-4">
             Don’t have an account?
             <a href="{{ route('register') }}" class="text-blue-400 hover:underline">
