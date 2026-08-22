@@ -30,7 +30,7 @@
         </p>
     </div>
     <div class="rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
-        <img src="{{ asset('img/p1.jpeg') }}" alt="Our shakes" class="w-full h-72 object-cover">
+        <img src="https://img.magnific.com/free-photo/glass-chocolate-shake-table_23-2148922869.jpg" alt="Our shakes" class="w-full h-72 object-cover">
     </div>
 </div>
 
