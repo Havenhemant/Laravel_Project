@@ -24,10 +24,10 @@
 
                     <input type="text" name="username"
                         value="{{ old('username') }}"
-                        placeholder=" "
+                        placeholder="Username"
                         class="input peer pl-10 @error('username') ring-2 ring-red-500 @enderror">
 
-                    <label class="floating-label">Username</label>
+                    <label class="floating-label"></label>
 
                     @error('username')
                         <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
@@ -40,10 +40,10 @@
 
                     <input type="email" name="email"
                         value="{{ old('email') }}"
-                        placeholder=" "
+                        placeholder="Email "
                         class="input peer pl-10 @error('email') ring-2 ring-red-500 @enderror">
 
-                    <label class="floating-label">Email</label>
+                    <label class="floating-label"></label>
 
                     @error('email')
                         <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
@@ -55,10 +55,10 @@
                     <span class="input-icon">🔒</span>
 
                     <input id="password" type="password" name="password"
-                        placeholder=" "
+                        placeholder=" Password"
                         class="input peer pl-10 pr-10 @error('password') ring-2 ring-red-500 @enderror">
 
-                    <label class="floating-label">Password</label>
+                    <label class="floating-label"></label>
 
                    
                     <button type="button" onclick="togglePassword('password', this)"
@@ -76,10 +76,10 @@
                     <span class="input-icon">🔒</span>
 
                     <input id="password_confirmation" type="password" name="password_confirmation"
-                        placeholder=" "
+                        placeholder="Confirm Password"
                         class="input peer pl-10 pr-10">
 
-                    <label class="floating-label">Confirm Password</label>
+                    <label class="floating-label"></label>
 
                     <button type="button" onclick="togglePassword('password_confirmation', this)"
                         class="absolute right-3 top-3 text-slate-500 hover:text-slate-700 dark:hover:text-white">
