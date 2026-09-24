@@ -25,7 +25,7 @@
                     <input type="text" name="username"
                         value="{{ old('username') }}"
                         placeholder="Username"
-                        class="input peer pl-10 @error('username') ring-2 ring-red-500 @enderror">
+                        class="input peer pl-10 bg-black @error('username') ring-2 ring-red-500 @enderror">
 
                     <label class="floating-label"></label>
 
@@ -41,7 +41,7 @@
                     <input type="email" name="email"
                         value="{{ old('email') }}"
                         placeholder="Email "
-                        class="input peer pl-10 @error('email') ring-2 ring-red-500 @enderror">
+                        class="input peer pl-10 bg-black @error('email') ring-2 ring-red-500 @enderror">
 
                     <label class="floating-label"></label>
 
@@ -56,7 +56,7 @@
 
                     <input id="password" type="password" name="password"
                         placeholder=" Password"
-                        class="input peer pl-10 pr-10 @error('password') ring-2 ring-red-500 @enderror">
+                        class="input peer pl-10 pr-10 bg-black @error('password') ring-2 ring-red-500 @enderror">
 
                     <label class="floating-label"></label>
 
@@ -77,7 +77,7 @@
 
                     <input id="password_confirmation" type="password" name="password_confirmation"
                         placeholder="Confirm Password"
-                        class="input peer pl-10 pr-10">
+                        class="input peer pl-10 pr-10 bg-black">
 
                     <label class="floating-label"></label>
 
